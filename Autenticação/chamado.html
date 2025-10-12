@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema SUPPLIER</title>
+    <link rel="stylesheet" href="estiloChamado.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">SUPPLIER</div>
+        <ul>
+            <li><a href="#">Chamados</a></li>
+            <li><a href="#">Soluções</a></li>
+            <li><a href="#">Exemplo</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Cadastro de Solicitação</h1>
+        
+        <div id="notification" class="notification"></div>
+        
+        <form id="requestForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nomeAdmin">Nome do administrador:</label>
+                    <input type="text" name="nomeAdmin" id="nomeAdmin" required>
+                </div>
+                <div class="form-group">
+                    <label for="nomeCol">Nome do colaborador:</label>
+                    <input type="text" name="nomeCol" id="nomeCol" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ma">Matrícula:</label>
+                    <input type="text" name="ma" id="ma" required>
+                </div>
+                <div class="form-group">
+                    <label for="val">Valor:</label>
+                    <input type="text" name="val" id="val" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="msg">Mensagem:</label>
+                <input type="text" name="msg" id="msg" class="message-input" required>
+            </div>
+            
+            <input type="submit" value="Submeter" id="sub">
+            
+            <div id="ritmId" class="ritm-id"></div>
+        </form>
+    </div>
+    
+    <footer>
+        <p>Sistema SUPPLIER &copy; 2025 - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        document.getElementById('requestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validação básica
+            const nomeAdmin = document.getElementById('nomeAdmin').value;
+            const nomeCol = document.getElementById('nomeCol').value;
+            const ma = document.getElementById('ma').value;
+            const val = document.getElementById('val').value;
+            const msg = document.getElementById('msg').value;
+            
+            const notification = document.getElementById('notification');
+            const ritmIdElement = document.getElementById('ritmId');
+            
+            if (!nomeAdmin || !nomeCol || !ma || !val || !msg) {
+                notification.textContent = 'Por favor, preencha todos os campos.';
+                notification.className = 'notification error';
+                notification.style.display = 'block';
+                ritmIdElement.style.display = 'none';
+                return;
+            }
+            
+            // Gerar ID RITM aleatório
+            const randomNumbers = Math.floor(1000 + Math.random() * 9000); 
+            const ritmId = `RITM${randomNumbers}`;
+            
+            // Exibir notificação e ID gerado
+            notification.textContent = 'Solicitação enviada com sucesso!';
+            notification.className = 'notification success';
+            notification.style.display = 'block';
+            
+            ritmIdElement.textContent = `${ritmId}`;
+            ritmIdElement.style.display = 'block';
+            
+        });
+    </script>
+</body>
+</html>
