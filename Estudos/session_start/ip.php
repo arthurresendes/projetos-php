@@ -9,5 +9,6 @@
     echo "<h2> Seu ip: </h2>";
     echo "<pre>$VAR</pre>";
     echo "<br><br>";
+    echo "<a href=menu.php>Voltar ao menu</a>"
 
 ?>

@@ -7,6 +7,8 @@
         header('location: menu.php');
         exit();
     }
+
+    // php -S localhost:8000 -> Para executar localhost
 ?>
 
 
@@ -20,10 +22,10 @@
 </head>
 <body>
     <form action="login.php" method="post">
-        <label for="nm">Name: </label>
-        <input type="text" name="nm" id="nm">
+        <label for="nm">Nome: </label>
+        <input type="text" name="nm" id="nm"><br><br>
         <label for="se">Senha: </label>
-        <input type="password" name="se" id="se">
+        <input type="password" name="se" id="se"><br><br>
         <br><br>
         <input type="submit" value="Validar">
     </form>
