@@ -5,9 +5,7 @@
         exit();
     }
 
-    $VAR = shell_exec('ipconfig');
-    echo "<h2> Seu ip: </h2>";
-    echo "<pre>$VAR</pre>";
-    echo "<br><br>";
-
+    $VAR3 = shell_exec('systeminfo');
+    echo "<h2>Informações de sistema: </h2>";
+    echo "<pre>$VAR3</pre>";
 ?>
