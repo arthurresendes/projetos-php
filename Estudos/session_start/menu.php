@@ -25,6 +25,6 @@
     <a href="ip.php">IP</a><br>
     <a href="dir.php">Diretorios</a><br>
     <a href="system.php">Configurações de sistema</a><br>
-    <a href="netstat.php">Conexões</a><br>
+    <a href="netsh.php">Net</a><br>
 </body>
 </html>

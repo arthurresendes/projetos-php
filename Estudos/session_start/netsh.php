@@ -5,7 +5,7 @@
         exit();
     }
 
-    $VAR = shell_exec('netstat');
+    $VAR = shell_exec('netsh');
     echo "<h2> Suas conexões: </h2>";
     echo "<pre>$VAR</pre>";
     echo "<br><br>";
